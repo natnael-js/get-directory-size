@@ -1,4 +1,5 @@
 import os
+import matplotlib.pyplot as plt
 
 def get_size_format(b, factor=1024, suffix="B"):
     
@@ -28,6 +29,10 @@ def get_directory_size(directory):
         return 0
     return total
 
+def plot_pie(sizes, name):
+    plt.pie(sizes, labels=names, autopct=lambda pct: f"{pct:.2f}%")
+    plt.title("Different sub-directory sizes in bytes")
+    plt.show()
 
 if __name__ == "__main__":
     import sys
@@ -46,4 +51,4 @@ if __name__ == "__main__":
         names.append(os.path.basename(directory) + ": " + get_size_format(directory_size))
 
     print("[+] Total directory size:", get_size_format(sum(directory_sizes)))
-
+    plot_pie(directory_sizes, names)
