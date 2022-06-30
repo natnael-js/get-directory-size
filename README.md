@@ -4,5 +4,5 @@
 ```
 python3 get_dir_size.py ~/path/to/directory
 ```
-# ToDo:
-[-] add pie chart 
+
+*added pie chart function by [Ermias Bahru](https://github.com/ErmiasBahru)*
